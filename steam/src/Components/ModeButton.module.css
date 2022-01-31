@@ -1,0 +1,15 @@
+.modeToggle {
+    display: flex;
+}
+.modeToggle button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+  
+}
+.modeIcon {
+    color: yellow;
+}
+.modeIcon:hover {
+    color: black;
+}
