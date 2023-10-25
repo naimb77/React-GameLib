@@ -10,13 +10,13 @@ export default function GameDetail() {
 
     const API_KEY = 'd4967418779f47b3a9c9863397223798';
 
-    const { id }: paramTypes = useParams();
+    // const { id }: paramTypes = useParams();
     const [gameDetail, setGameDetail] = useState<IGame>();
 
     //https://api.rawg.io/api/games/minecraft?key=d4967418779f47b3a9c9863397223798
 
     const getGameDetail = async () => {
-        await fetch(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
+        await fetch(`https://api.rawg.io/api/games/?key=${API_KEY}`)
             .then(response => response.json())
             .then(data => {
                 setGameDetail(data);

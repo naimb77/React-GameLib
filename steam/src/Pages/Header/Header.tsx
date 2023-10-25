@@ -15,8 +15,8 @@ export default function Header() {
           <Nav className="justify-content-center" style={{ display: 'flex', flexDirection: 'row' }}>
             <Link style={{ textDecoration: 'none', fontWeight: 500, color: 'lightgray', width: 100, padding: 8 }} to="/">Home</Link>
             <Link style={{ textDecoration: 'none', fontWeight: 500, color: 'lightgray', width: 100, padding: 8 }} to="/games">Games</Link>
-            <Link style={{ textDecoration: 'none', fontWeight: 500, color: 'lightgray', width: 100, padding: 8 , marginRight: 20}} to="/games/search/">Search</Link>
-            <div className="dropdown" style={{marginRight: 20}}>
+            <Link style={{ textDecoration: 'none', fontWeight: 500, color: 'lightgray', width: 100, padding: 8, marginRight: 20 }} to="/games/search/">Search</Link>
+            <div className="dropdown" style={{ marginRight: 20 }}>
               <button className="dropbtn">Extra's</button>
               <div className="dropdownContent">
                 <Link to="/game-list/">Game List</Link>

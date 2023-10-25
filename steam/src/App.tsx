@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react';
 import './App.css';
 import styles from './App.module.css'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from './Pages/Header/Header';
 import Footer from './Pages/Footer/Footer';
 import Game from './Components/GameDetail';
@@ -24,26 +24,24 @@ export default function App() {
         <div className="App">
           <div className={`contentWrapper ${mode === 'dark' ? styles.contentWrapperDark : ''}`}>
             <Header />
-            <Switch>
-              <Route exact path='/'>
-                <HomePage />
-              </Route>
-              <Route exact path='/games'>
-                <GamePage />
-              </Route>
-              <Route exact path='/details/game/:id'>
-                <Game />
-              </Route>
-              <Route exact path='/game-form/'>
-                <AddGameForm gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />
-              </Route>
-              <Route exact path='/game-list/'>
-                <AddedGameListPage gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />
-              </Route>
-              <Route exact path="/games/search/">
-                <SearchPage />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/games' element={<GamePage />} />
+              <Route path='/game-form/' element={<AddGameForm gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />} />
+              <Route path='/game-list/' element={<AddedGameListPage gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />} />
+              <Route path="/games/search/" element={<SearchPage />} />
+
+              {/* 
+            <Route path='/game-form/'>
+              <AddGameForm gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />
+            </Route>
+            <Route path='/game-list/'>
+              <AddedGameListPage gameLocalData={gameLocalData} setGameLocalData={setGameLocalData} />
+            </Route>
+            <Route path="/games/search/">
+              <SearchPage />
+            </Route> */}
+            </Routes>
             <Footer />
           </div>
         </div>
